@@ -1,24 +1,18 @@
-class MainMenu extends Phaser.Scene{}
+class MainMenu extends Phaser.Scene {
+	constructor() {
+		super({key: 'MainMenu'});
+	}
 
-//Load assets
-MainMenu.preload = function() {
-	//load background image
-	this.load.image("background", "./assets/space.png");
+	preload() {
+		this.load.image('background', 'assets/background-space.png');
+	}
 
-};
+	create() {
+		let spaceBackground = this.add.sprite(0, 0, 'background');
+		spaceBackground.setOrigin(0, 0);
+		spaceBackground.setScale(1);
+		spaceBackground.setPosition(640 / 2, 320 / 2);
 
-MainMenu.create = function() {
-	// create background sprite
-	let spaceBackground = this.add.sprite (0, 0, "background");
-
-	//change the origin to the top left corner, use the method setOrgin(0,0)
-	spaceBackground.setOrigin(0, 0);
-
-	//change the background scale
-	spaceBackground.setScale(1);
-
-	//center the background sprite
-	spaceBackground.setPosition(640/2, 320/2);
-
-	console.log('spaceBackground testing center position', spaceBackground);
-};
+		console.log('spaceBackground testing center position', spaceBackground);
+	};
+}
