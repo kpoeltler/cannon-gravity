@@ -3,7 +3,7 @@ class MainMenu extends Phaser.Scene{}
 //Load assets
 MainMenu.preload = function() {
 	//load background image
-	this.load.image("background", "./assets/space.png");
+	this.load.image("background", "web/assets/space.png");
 
 };
 
