@@ -8,11 +8,10 @@ class MainMenu extends Phaser.Scene {
 	}
 
 	create() {
-		let spaceBackground = this.add.sprite(0, 0, 'background');
-		spaceBackground.setOrigin(0, 0);
-		spaceBackground.setScale(1);
-		spaceBackground.setPosition(640 / 2, 320 / 2);
+		this.bgImage = this.add.image(0, 0, 'background');
+		this.bgImage.setOrigin(0, 0);
 
-		console.log('spaceBackground testing center position', spaceBackground);
-	};
+		// TODO: Maintain background image aspect ratio
+		this.bgImage.setDisplaySize(this.sys.canvas.width, this.sys.canvas.height);
+	}
 }
