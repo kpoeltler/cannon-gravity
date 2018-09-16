@@ -2,7 +2,7 @@
 	'use strict';
 
 	const config = {
-		type: Phaser.AUTO,
+		type: Phaser.CANVAS,
 		width: window.innerWidth,
 		height: window.innerHeight,
 		scene: [MainMenu]
