@@ -1,41 +1,40 @@
-// create a scene object and pass it "Game"
-let gameScene = new Phaser.Scene("Game");
-console.log(Phaser);
-// Load assets
-gameScene.preload = function() {
-  // Load images,scene: background, players
-  this.load.image("cannonball", "assets/cannonball.png");
-  this.load.image("cannon1", "assets/cannon.png");
 
+class EarthScene extends Phaser.Scene {
+	constructor() {
+		super({key: 'EarthScene'});
+	}
+preload() {
+  // Load images,scene: background, players
+  this.load.image("earthLandscape", "assets/forest_hill.png");
+  this.load.image("shootsLeft", "assets/cannon.png");
+  this.load.image("cannonball", "assets/cannonball.png");
+  this.load.image("shootsRight", 'assets/shoots_right_cannon.png');
 
 };
 
 // called once after preload ends
 gameScene.create = function() {
   // create bg sprite
-  let cannonBall = this.add.sprite(0, 0, "cannonball"); // set this to a variable so that you can change the origin
-//change the cannonball scale
+  let bg = this.add.sprite(0, 0, "earthLandscape"); // set this to a variable so that you can change the origin
 
-  cannonBall.setScale(1);
-  cannonBall.displayWidth = 50;
-  cannonBall.displayHeight = 70;
   //change the origin to the top left corner, use the method setOrigin(0, 0)
-  cannonBall.setOrigin(0, 0);
+  bg.setOrigin(0, 0);
 
-
+  //change the background scale
+  bg.setScale(1);
 
   //create the player sprites
-  let cannon1 = this.add.sprite(70, 250, "cannon1");
-  let cannon2 = this.add.sprite(120, 80, "cannon2");
+  let player2 = this.add.sprite(70, 250, "shootsLeft");
+  let player1 = this.add.sprite(120, 80, "shootsRight");
   // this.player1.displayWidth = 100;
   // this.player1.displayHeight = 150;
 
   //change player position
-  cannon1.setScale(0.2);
-  cannon2.setScale(0.01);
+  player2.setScale(0.2);
+  player1.setScale(0.01);
 
   //create the enemy sprite
-  let  = this.add.sprite(200, 190, 'enemy');
+  let enemy = this.add.sprite(200, 190, 'cannonball');
   enemy.setScale(3)
   enemy.displayWidth = 50;
   enemy.displayHeight = 70;
@@ -69,7 +68,6 @@ this.enemy.scaleY += 0.01;
 let config = {
   type: Phaser.AUTO, // Phaser will use WebGL if available, if not Canvas API
   width: 640,
-
   height: 320,
   scene: gameScene
 };
