@@ -105,7 +105,8 @@ class MainMenu extends Phaser.Scene {
 			}).on('pointerout', () => {
 				image.setScale(scale);
 			}).on('pointerup', () => {
-				alert(`You clicked ${world.name}!`);
+				// alert(`You clicked ${world.scene}!`);
+				window.open({world.scene});
 			});
 	}
 }
