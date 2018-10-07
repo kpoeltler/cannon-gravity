@@ -36,3 +36,4 @@ const worlds = [
 		scene: "",
 	}
 ];
+module.exports = worlds;

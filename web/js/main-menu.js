@@ -9,8 +9,14 @@ class MainMenu extends Phaser.Scene {
 
 		worlds.forEach((world) => {
 			this.load.image(world.id, world.image);
-		});
-	}
+			this.input.manager.enabled = true;
+			this.input.once('pointerdown', function () {
+				this.scene.start(world.scene);
+			}, this)
+
+			});
+		};
+
 
 	create() {
 		const canvas = {
@@ -97,16 +103,25 @@ class MainMenu extends Phaser.Scene {
 			);
 		}
 
-		image
-			.setScale(scale)
-			.setInteractive({useHandCursor: true})
-			.on('pointerover', () => {
-				image.setScale(scale + 0.02);
-			}).on('pointerout', () => {
-				image.setScale(scale);
-			}).on('pointerup', () => {
-				// alert(`You clicked ${world.scene}!`);
-				window.open({world.scene});
-			});
+	// 	image
+	// 		.setScale(scale)
+	// 		.setInteractive({useHandCursor: true})
+	// 		.on('pointerover', () => {
+	// 			image.setScale(scale + 0.02);
+	// 		}).on('pointerout', () => {
+	// 			image.setScale(scale);
+	// 		}).on('pointerup', () => {
+	// 			// alert(`You clicked ${world.name}!`);
+	// 			loadDoc("./earth-scene");
+	// 			//when earth is clicked it does open up a new page but it opens up an error.
+	// 		});
+	// }
+
+	image
+		.setScale(scale)
+		.setInteractive()
+
+	update() {
+		if ()
 	}
 }

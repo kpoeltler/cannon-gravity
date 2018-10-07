@@ -1,8 +1,11 @@
 
-class EarthScene extends Phaser.Scene {
-	constructor() {
-		super({key: 'EarthScene'});
-	}
+class worldEarth extends Phaser.Scene {
+  constructor ()
+  {
+    super ({key: 'EarthScene'});
+  }
+
+
 preload() {
   // Load images,scene: background, players
   this.load.image("earthLandscape", "assets/forest_hill.png");
@@ -13,7 +16,9 @@ preload() {
 };
 
 // called once after preload ends
-gameScene.create = function() {
+create ()
+{
+  function() {
   // create bg sprite
   let bg = this.add.sprite(0, 0, "earthLandscape"); // set this to a variable so that you can change the origin
 
