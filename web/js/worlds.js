@@ -3,7 +3,7 @@ const worlds = [
 		id: 'world-earth',
 		name: 'Earth',
 		image: 'assets/world-earth.png',
-		scene: 'js/earth-scene.js',
+		scene: 'scene-earth.js',
 	},
 	{
 		id: 'world-moon',
@@ -36,4 +36,4 @@ const worlds = [
 		scene: "",
 	}
 ];
-module.exports = worlds;
+// module.exports = worlds;

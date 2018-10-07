@@ -11,7 +11,7 @@ class MainMenu extends Phaser.Scene {
 			this.load.image(world.id, world.image);
 			this.input.manager.enabled = true;
 			this.input.once('pointerdown', function () {
-				this.scene.start(world.scene);
+				this.scene.start(world.scene); //I want the scene value to load when the image is clicked and not an alert popup
 			}, this)
 
 			});
@@ -25,6 +25,7 @@ class MainMenu extends Phaser.Scene {
 			centerX: this.sys.canvas.width / 2,
 			centerY: this.sys.canvas.height / 2
 		};
+
 
 		this.placeBackgroundImage(canvas);
 		const titleHeight = this.placeTitleImage(canvas, {top: 30, bottom: 40, sides: 200});
@@ -101,11 +102,14 @@ class MainMenu extends Phaser.Scene {
 				(cell.width - (padding * 2)) / image.width,
 				(cell.height - (padding * 2)) / image.height
 			);
-		}
+		};
 
-	// 	image
-	// 		.setScale(scale)
-	// 		.setInteractive({useHandCursor: true})
+
+		image
+			.setScale(scale)
+		.setInteractive({useHandCursor: true})
+	}
+}
 	// 		.on('pointerover', () => {
 	// 			image.setScale(scale + 0.02);
 	// 		}).on('pointerout', () => {
@@ -116,12 +120,3 @@ class MainMenu extends Phaser.Scene {
 	// 			//when earth is clicked it does open up a new page but it opens up an error.
 	// 		});
 	// }
-
-	image
-		.setScale(scale)
-		.setInteractive()
-
-	update() {
-		if ()
-	}
-}

@@ -1,8 +1,8 @@
 
-class worldEarth extends Phaser.Scene {
+class SceneEarth extends Phaser.Scene {
   constructor ()
   {
-    super ({key: 'EarthScene'});
+    super ({key: 'SceneEarth'});
   }
 
 
